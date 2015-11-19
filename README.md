@@ -37,9 +37,8 @@ If you have any problem with these packets, please let me konw or google it.
 >python GetDataFromGoogleAPI.py
 
 ### Further improvement
-Please build a new class for route comparison.
-I need not get the data from the our database.
-You can finish this part refer to the previous hand check code.
+- Please build a new class for route comparison.
+- I do not finish the part of getting the data from the our database.</br>You can finish this part refer to the previous hand check code.
 
 
 
