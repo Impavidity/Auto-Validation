@@ -124,7 +124,7 @@ class MapInfo(object):
                                     mode=mode,
                                     departure_time=self.time,
                                     alternatives=True)
-                file_write.write(json.dumps(directions_result,indent=4))
+                file_write.write(json.dumps(directions_result))
             else:
                 print ("%s%s[FILE]%s" % (fg(1), bg(15), attr(0))), "Reading json data from file now ..."
                 with open("data/"+self.ID+"/"+mode) as file_read:
@@ -201,7 +201,7 @@ def main():
     model = MapInfo(nodeID, origin, destin)
     routes = model.get_walking_mode_route()
     maps = pygmaps.maps(0,0,4)
-    
+    '''
     for route in routes:
         print route.start_location
         print route.end_location
@@ -229,6 +229,7 @@ def main():
             print "    ",step.distance
             print "    ",step.polyline
             print "    ",step.travel_mode
+        '''
     routes = model.get_transit_mode_route()
     for route in routes:
         print route.start_location
@@ -236,6 +237,8 @@ def main():
         print route.duration
         print route.distance
         print route.overview_polyline
+        print len(route.overview_polyline)
+        '''
         for step in route.steps:
             print "    ",step.start_location
             print "    ",step.end_location
@@ -248,8 +251,10 @@ def main():
             print "    ",step.arrival_stop
             print "    ",step.short_name 
         maps.addpath(route.overview_polyline,"#00FF00")
+    '''
         break
-    maps.draw('./mymap.html')
+    #maps.draw('./mymap.html')
+
 
 if __name__=="__main__":
     main()
