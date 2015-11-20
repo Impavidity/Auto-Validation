@@ -6,6 +6,8 @@ from decodeMapPolyline import *
 import xlrd
 from colored import bg,fg,attr
 import pygmaps
+import os
+
 
 class Step(object):
     '''This is the class for saving steps'''
@@ -113,12 +115,26 @@ class MapInfo(object):
         alternatives = True
         '''
         try:
-            directions_result = self.gmaps.directions(self.origin,
+            if not os.path.exists("data"):
+                os.makedirs("data")
+            if not os.path.exists("data/"+self.ID):
+                os.makedirs("data/"+self.ID)
+            if not os.path.exists("data/"+self.ID+"/"+mode):
+                file_write = open("data/"+self.ID+"/"+mode, "w")
+                directions_result = self.gmaps.directions(self.origin,
                                     self.destin,
                                     mode=mode,
                                     departure_time=self.time,
                                     alternatives=True)
+                file_write.write(json.dumps(directions_result,indent=4))
+            else:
+                print ("%s%s[FILE]%s" % (fg(1), bg(15), attr(0))), "Reading json data from file now ..."
+                with open("data/"+self.ID+"/"+mode) as file_read:
+                    directions_result = json.load(file_read)
+                print ("%s%s[FILE]%s" % (fg(1), bg(15), attr(0))), "Reading json data from file finished"
             return directions_result
+        except IOError, error:
+            print ("%s%s[FILE]%s" % (fg(15), bg(1), attr(0))), "Load data from file error:", error
         except Exception, error:
             print ("%s%s[API]%s" % (fg(15), bg(1), attr(0))), "Get data from API error:", error
 
@@ -159,7 +175,7 @@ def read_file(file_name):
         data = xlrd.open_workbook(file_name)
         table = data.sheets()[0]
         num = table.nrows - 1
-        ID = [int(item) for item in table.col_values(0)[1:]]
+        ID = [str(int(item)) for item in table.col_values(0)[1:]]
         home_lat = table.col_values(2)[1:]
         home_lon = table.col_values(3)[1:]
         school_lat = table.col_values(4)[1:]
