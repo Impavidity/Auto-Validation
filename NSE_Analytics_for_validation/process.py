@@ -367,15 +367,10 @@ def create_geojson(nid, data_frame, home_loc, school_loc):
 
     return json_output
 
-def main(url, device_file, current_date =
-         datetime.date.today().strftime("%Y-%m-%d"), testing=False, log_level=logging.WARNING):
-    """Main processing loop. It expects a base url and the file name of
-    the csv file of device ids. If testing is True the function
-    returns detailed information for debugging. If the current_date
-    string (%Y-%m-%d) is provided this is taken as the current date
-    when processing is done, otherwise use the localtime to determine
-    the date.
-
+def main(url, nid, current_date =
+         datetime.date.today().strftime("%Y%m%d"), log_level=logging.WARNING):
+    """Main processing function, it takes in a nid and provides desired analytic results,
+    including raw coordinates along the real track, home/school locations, modes/distance/duration of the am/pm trip
     """
     def process(nid, analysis_date, current_date):
         """Process device nid for given date (%Y-%m-%d) and save the results
@@ -394,27 +389,22 @@ def main(url, device_file, current_date =
         start_get = int(getFirstSecondOfDay(analysis_unix)) #0 am of the analysis day
         end_get = int(start_get+24*3600-1) #24 pm of the analysis day
 
+        print "current_date: ", current_date
+        print "previous_date: ", analysis_date
+        print "start unix: ",start_get
+        print "end unix: ",end_get
+
         # retrieve unprocessed device data from the backend
         logging.info("Get data for device %d on the day %s" % (nid, analysis_date))
-#        reading_start = timeit.default_timer()
         data_frame = getData(url, nid, start_get, end_get)
-#        reading_time = timeit.default_timer()-reading_start
         if data_frame is None:
             logging.info("No data returned for device %d, skip." % nid)
-            # logging of reading time into err file
-#            logging.warning("READING TIME of " + str(nid) + ": " + str(reading_time))
             return
         elif len(data_frame)<30:
             # if the data frame size is smaller than a certain threshold, then abandon the data
             logging.warning("Too little data returned for device %d, skip." % nid)
-            # logging of reading time into err file
-#            logging.warning("READING TIME of " + str(nid) + ": " + str(reading_time))
             return
 
-        # logging of reading time into err file
-#        logging.warning("READING TIME of " + str(nid) + ": " + str(reading_time))
-        
-#        exe_start = timeit.default_timer();
         # clean data to reduce noise
         logging.info("Clean data for device %d" % nid)
         clean_data(data_frame,
@@ -433,7 +423,7 @@ def main(url, device_file, current_date =
         predicted_modes = train_heuristic.predict(data_frame, smooth_modes)
         predicted_modes = bus_heuristic.predict(data_frame, predicted_modes)
         # identify trips from the data
-        trips, home_loc, school_loc, pois = tripParse.process(predicted_modes, data_frame,
+        trips, home_loc, school_loc, pois, am_track, pm_track = tripParse.process(predicted_modes, data_frame,
                                                       stopped_thresh=stopped_thresh,
                                                       poi_dwell_time=poi_dwell_time,
                                                       school_start=school_start,
@@ -445,8 +435,6 @@ def main(url, device_file, current_date =
                                                       mode_thresh=mode_thresh,
                                                       poi_cover_range = poi_cover_range)
 
-#        exe_time = timeit.default_timer()-exe_start
-
         # logging in .err
         num_pt = len(data_frame)
         time_span = (data_frame['TIMESTAMP'][num_pt-1]-data_frame['TIMESTAMP'][0])/3600 % 24
@@ -455,71 +443,8 @@ def main(url, device_file, current_date =
         logging.warning("NID: " + str(nid) + "; SCHOOL: " + str(school_loc))
         logging.warning("NID: " + str(nid) + "; TRIPS: " + str(trips))
         logging.warning("NID: " + str(nid) + "; POIS: " + str(pois))
-#        logging.warning("EXECUTING TIME of " + str(nid) + ": " + str(exe_time))
-                
-        logging.info("Save modes for device %d" % nid)
-        # save detected mode to backend
-        timestamps = data_frame['TIMESTAMP'].values
-        modes_saved = saveMode(url, nid, timestamps, predicted_modes)
-        # save trips to backend. only save if AM or PM mode was detected
-        logging.info("Save trips for device %d" % nid)
-        logging.info("TRIP SAVE:\n %s" % str(trips))
-        
-#        saving_start = timeit.default_timer()
 
-        # save am trip to the current day
-#        payload_am = trips.copy()
-#        payload_am.pop('pm_mode',None)
-#        payload_am.pop('pm_distance',None)
-#        if home_loc[0]!=None:
-#            payload_am['home_loc'] = [home_loc[0],home_loc[1]]
-#        if school_loc[0]!=None:
-#            payload_am['school_loc'] = [school_loc[0],school_loc[1]]
-#        payload_am['poi_lat'] = pois['poi_lat']
-#        payload_am['poi_lon'] = pois['poi_lon']
-#        am_trip_saved = saveTrips(url, nid, current_date, payload_am)
-#        logging.debug(am_trip_saved)
-#
-#        # save pm trip to the previous day, combining with the previous day's am trip
-#        payload_pm = trips.copy()
-#        payload_pm.pop('am_mode',None)
-#        payload_pm.pop('am_distance',None)
-#        payload_pm.pop('outdoor_time',None)
-#        payload_pm.pop('travel_co2',None)
-##        payload_pm['outdoor_time']=0
-##        payload_pm['travel_co2']=0
-##        payload_pm['home_loc'] = []
-##        payload_pm['school_loc'] = []
-##        payload_pm['poi_lat'] = []
-##        payload_pm['poi_lon'] = []
-#        pm_trip_saved = saveTrips(url, nid, analysis_date, payload_pm)
-#        logging.debug(pm_trip_saved)
-                
-        # save trip info as one day
-        payload = trips.copy()
-        if home_loc[0]!=None:
-            payload['home_loc'] = [home_loc[0],home_loc[1]]
-        else:
-            payload['home_loc'] = []
-        if school_loc[0]!=None:
-            payload['school_loc'] = [school_loc[0],school_loc[1]]
-        else:
-            payload['school_loc'] = []
-        payload['poi_lat'] = pois['poi_lat']
-        payload['poi_lon'] = pois['poi_lon']
-        trip_saved = saveTrips(url, nid, analysis_date, payload) # save to the analysis day
-        
-#        saving_time = timeit.default_timer()-saving_start
-#         logging saving time into err file
-#        logging.warning("SAVING TIME of " + str(nid) + ": " + str(saving_time))
-        
-        # if both mode save actions are successful, set the analysis flag to success
-#        saved_status = 1 if modes_saved and (am_trip_saved or pm_trip_saved) else 0
-        saved_status = 1 if modes_saved and trip_saved else 0
-        if saved_status:
-            logging.warning("Mode saving and trip saving status: True")
-        setStatus(url, nid, analysis_date, saved_status)
-        return data_frame, predicted_modes, trips, home_loc, school_loc
+        return am_track, pm_track, trips, home_loc, school_loc
         
 
     # stopped_thresh is the speed in m/s below which we consider the
@@ -573,17 +498,6 @@ def main(url, device_file, current_date =
     # number of dates that maximaly be re-attempted to process if they
     # have previously faild. Default 0 (no re-attempts).
     max_attempts_pending = 0
-    # dictionaries to return trip and mode information for debugging
-    # in test mode
-    modes_dict = {}
-    trips_dict = {}
-    homes_dict = {}
-    school_dict = {}
-    home_loc = None
-    school_loc = None
-    # GeoJSON output file for testing
-    nse_directory = os.path.dirname(os.path.realpath(__file__))
-    geo_json_file="%s/result.geojson" % nse_directory
 
     # create logger
     FORMAT = '%(asctime)-15s %(message)s'
@@ -591,9 +505,10 @@ def main(url, device_file, current_date =
 
     # remember start time for performance analysis
     start_time = time.time()
+
     # determine which date to process data for which is one day before the current date
-    analysis_date_tuple = datetime.datetime.strptime(current_date, "%Y-%m-%d") - datetime.timedelta(days=1)
-    analysis_date =  analysis_date_tuple.strftime("%Y-%m-%d")
+    analysis_date_tuple = datetime.datetime.strptime(current_date, "%Y%m%d") - datetime.timedelta(days=1)
+    analysis_date =  analysis_date_tuple.strftime("%Y%m%d")
     analysis_weekday = analysis_date_tuple.weekday() # 0 for Monday, 6 for Sunday
     if analysis_weekday==0:
         home_end = 0
@@ -602,64 +517,24 @@ def main(url, device_file, current_date =
         home_start = 24
         logging.debug('It is a Friday! home_start='+str(home_start))
     
-    # load list of device IDs from file
-    logging.info("Load device IDs")
-    try:
-        with open(device_file, 'r') as csvfile:
-            device_ids = [ int(line.strip()) for line in csvfile if line.strip() ]
-    except IOError as e:
-        logging.error("Failed to load device IDs: %s" %  e.strerror)
-        sys.exit(10)
 
     # create predictors, load trained model if necessary
     logging.info("Load predictor model")
     smooth_heuristic = modeSmoother.SmoothingPredictor()
     train_heuristic = TransitHeuristic.TrainPredictor()
     bus_heuristic = TransitHeuristic.BusMapPredictor()
-    # buffer for GeoJSON output
-    geojson_buffer = []
 
-    # main processing loop for today's processing job
-    logging.info("Start processing for date %s" % analysis_date)
-    for nid in device_ids:
-        logging.info("== Process device ID = %d ==" % nid)
-        try:
-            result = process(nid, analysis_date, current_date)
-            if testing and result:
-                data_frame, predicted_modes, trips, home_loc, school_loc = result
-                # save predicted mode and trips for this nid and date
-                modes_dict[(nid, analysis_date)] = izip(data_frame[['TIMESTAMP']].values[:,0], predicted_modes)
-                trips_dict[(nid, analysis_date)] = trips
-                homes_dict[(nid, analysis_date)] = home_loc
-                school_dict[(nid, analysis_date)] = school_loc
-                # add data to GeoJSON file
-                logging.debug("create GeoJSON string")
-                geojson_buffer.append(create_geojson(nid, data_frame, home_loc, school_loc))
-        except:
-            e = traceback.format_exc()
-            logging.error("Processing nid %d failed: %s" % (nid, e))
-    logging.info("---Processed data for %d nodes in %.2f seconds ---" % (len(device_ids), time.time() - start_time))
-    # processing loop for re-processing pending dates
-    if max_attempts_pending > 0:
-        logging.info("Start re-processing pending dates")
-        for nid in device_ids:
-            try:
-                pending_dates = getPendingAnalysisDates(url, nid)
-                for pending_date in pending_dates[-max_attempts_pending:]:
-                    logging.info("Reprocess device ID = %d for date %s" % (nid, pending_date))
-                    result = process(nid, pending_date)
-            except:
-                e = traceback.format_exc()
-                logging.error("Reprocessing nid %d failed: %s" % (nid, e))
-
-    if testing:
-        # output GeoJSON file
-        with open(geo_json_file, 'w') as fout:
-            fout.write('{ "type": "FeatureCollection",\n    "features": [\n' + \
-                       ', '.join(geojson_buffer) + \
-                       '\n    ]\n }')
-        # return trips and locations
-        return {'Modes': modes_dict, 'Trips': trips_dict, "Home":homes_dict,"School":school_dict}
+    logging.info("== Process device ID = %d ==" % nid)
+    try:
+        result = process(nid, analysis_date, current_date)
+    except:
+        e = traceback.format_exc()
+        logging.error("Processing nid %d failed: %s" % (nid, e))
+        return null
+    
+    logging.info("---Processed data for node %d in %.2f seconds ---" % (nid, time.time() - start_time))
+    
+    return result
 
 
 if __name__ == "__main__":
@@ -667,8 +542,8 @@ if __name__ == "__main__":
     # parse arguments
     arguments = docopt(__doc__)
 
-    # deviceIDs is a mandatory option
-    device_file = arguments['--deviceIDs']
+    # nid is a mandatory option
+    device_file = arguments['--nid']
     log_level = logging.DEBUG if arguments['--verbose'] else logging.WARNING
     current_date = arguments['--current_date'] if arguments['--current_date'] else datetime.date.today().strftime("%Y-%m-%d")
 
