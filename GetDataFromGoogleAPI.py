@@ -58,8 +58,6 @@ class RouteInfo(object):
         self.steps = []
         self.parse()
 
-
-
     def parse(self):
         '''parse the route information'''
         try:
