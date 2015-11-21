@@ -127,8 +127,8 @@ def process(predicted_modes, data_frame, stopped_thresh=0.1,
     def distanceFcn(df,lat,lon,tripStart=True,homeIdx=True):
         #finds the index and value of the min distance from a dataframe to a certain point
     
-        search_range_school = 50; # m, the radios of searching for the start/end point of a trip (school)
-        search_range_home = 0; # m, the radios of searching for the start/end point of a trip (home)
+        search_range_school = 300; # m, the radios of searching for the start/end point of a trip (school)
+        search_range_home = 800; # m, the radios of searching for the start/end point of a trip (home)
 
         latlon = df[['WLATITUDE','WLONGITUDE']].values.tolist()
         dist_list = map(lambda x: great_circle_dist(x, [lat,lon], unit="meters"), latlon)
@@ -137,12 +137,14 @@ def process(predicted_modes, data_frame, stopped_thresh=0.1,
             # if the location is home, search range is smaller
             idx_in_range = np.where(dist_array<=search_range_home)[0]
             if len(idx_in_range)==0:
+                # if there are no points within the range, find the closest one
                 dist = np.nanmin(dist_array)
                 idx = dist_list.index(dist)
                 if tripStart:
                     dist_col = np.array(dist_list)
                     idx = max(np.where(dist_col== dist)[0])
             else:
+                # if there is point within the range, get the one closest to the boundary
                 if tripStart:
                     idx = idx_in_range[len(idx_in_range)-1]
                     dist = dist_array[idx]
@@ -153,12 +155,14 @@ def process(predicted_modes, data_frame, stopped_thresh=0.1,
             # if the location is school, search range is larger
             idx_in_range = np.where(dist_array<=search_range_school)[0]
             if len(idx_in_range)==0:
+                # if there are no points within the range, find the closest one
                 dist = np.nanmin(dist_array)
                 idx = dist_list.index(dist)
                 if tripStart:
                     dist_col = np.array(dist_list)
                     idx = max(np.where(dist_col== dist)[0])
             else:
+                # if there is point within the range, get the one closest to the boundary
                 if tripStart:
                     idx = idx_in_range[len(idx_in_range)-1]
                     dist = dist_array[idx]
@@ -204,9 +208,11 @@ def process(predicted_modes, data_frame, stopped_thresh=0.1,
                 if isAM:
                     mode_key = 'am_mode'
                     dist_key = 'am_distance'
+                    dura_key = 'am_duration'
                 else:
                     mode_key = 'pm_mode'
                     dist_key = 'pm_distance'
+                    dura_key = 'pm_duration'
                 
                 # calculate the distance of this mode segment
                 if int(mode_seg[2]) == MODE_WALK_IN:
@@ -225,14 +231,21 @@ def process(predicted_modes, data_frame, stopped_thresh=0.1,
                 if dist_seg==0 or np.isnan(dist_seg):
                     # filter out the zero or nan values of dist_seg
                     continue
+
                 if mode_seg[2]==prev_mode:
                     # if the current mode is same to the previous one, combine the two distance
                     prev_dist = trip_return[dist_key][len(trip_return[dist_key])-1]
                     cur_dist = checkDist((prev_dist*1000+dist_seg) / 1000,dist_lim)
                     trip_return[dist_key][len(trip_return[dist_key])-1]=cur_dist
+
+                    prev_dura = trip_return[dura_key][len(trip_return[dura_key])-1]
+                    cur_dura = prev_dura+time_span
+                    trip_return[dura_key][len(trip_return[dura_key])-1]=cur_dura
                     continue
+
                 trip_return[mode_key].append(int(mode_seg[2])) # append the mode
                 trip_return[dist_key].append(checkDist(dist_seg / 1000,dist_lim))
+                trip_return[dura_key].append(time_span)
                 prev_mode = mode_seg[2]
 
         return num_valid_mode_seg
@@ -256,11 +269,14 @@ def process(predicted_modes, data_frame, stopped_thresh=0.1,
         max_mode=5
         max_walk=4.0
 
+        am_track=[]
+        pm_track=[]
+
         day_frame['PRED_MODE']= pd.Series(predicted_modes, index=day_frame.index)
 
         #intialize returned trip
-        trip_return = {'am_mode': [],'pm_mode': [],'am_distance': [],'pm_distance': [],'travel_co2':
-                       0,'outdoor_time': 0}
+        trip_return = {'am_mode': [],'pm_mode': [],'am_distance': [],'pm_distance': [],'am_duration': [],'pm_duration':[],
+                        'travel_co2': 0,'outdoor_time': 0}
 
         #find the first home - school trip, within the time range for school/home travel
         #process string date index, no conversion for timezone
@@ -278,8 +294,9 @@ def process(predicted_modes, data_frame, stopped_thresh=0.1,
 
                 # define a new dataframe for the trip by selecting according to the time index between  home/school
                 df_am=home_sch_set[home_idx['idx']:school_idx['idx']+1]
+                am_track=df_am[['WLATITUDE','WLONGITUDE']].values
                 isAM = True
-                num_mode_seg = segFind(df_am, trip_return, mode_thresh, isAM, dist_lim, max_mode,max_walk)
+                num_mode_seg= segFind(df_am, trip_return, mode_thresh, isAM, dist_lim, max_mode,max_walk)
 
             else:
                 logging.info("No Home-School trip time data available")
@@ -302,6 +319,7 @@ def process(predicted_modes, data_frame, stopped_thresh=0.1,
             if school_idx['idx']<home_idx['idx'] and (home_idx['dist']<home_sch_dist*0.6 or home_sch_dist<1000):
                 # define a new dataframe for th2e trip by selecting according to the time index between home/school
                 df_pm=sch_home_set[school_idx['idx']:home_idx['idx']+1]
+                pm_track=df_pm[['WLATITUDE','WLONGITUDE']].values
                 isAM = False
                 num_mode_seg = segFind(df_pm, trip_return, mode_thresh, isAM, dist_lim, max_mode, max_walk)
 
@@ -325,7 +343,7 @@ def process(predicted_modes, data_frame, stopped_thresh=0.1,
             trip_return['travel_co2']+= getCO2(trip_return['pm_mode'], trip_return['pm_distance'])
             trip_return['travel_co2']=checkCO2(trip_return['travel_co2'],   co2_lim)
         
-        return trip_return
+        return trip_return, am_track, pm_track
 
     # start of process()
     pois, idx_of_pois = trip_segment(data_frame, stopped_thresh, poi_dwell_time)
@@ -348,7 +366,7 @@ def process(predicted_modes, data_frame, stopped_thresh=0.1,
     local_ts_date = pd.to_datetime(local_ts,unit='s')  # convert local time in second to local datetime
     # set_index creates a new object and returns it
     dfnew = data_frame.set_index(local_ts_date)
-    daily_trips = tripFind(home_loc,school_loc,dfnew,predicted_modes,mode_thresh)
+    daily_trips, am_track, pm_track = tripFind(home_loc,school_loc,dfnew,predicted_modes,mode_thresh)
 
     #set the trips dict to be empty if there is no AM or PM mode found
 #    if len(daily_trips['am_mode'])==0:
@@ -363,7 +381,7 @@ def process(predicted_modes, data_frame, stopped_thresh=0.1,
     for row in pois:
         daily_pois['poi_lat'].append(row[0])
         daily_pois['poi_lon'].append(row[1])
-    return daily_trips, home_loc, school_loc, daily_pois
+    return daily_trips, home_loc, school_loc, daily_pois, am_track, pm_track
 
 
 
