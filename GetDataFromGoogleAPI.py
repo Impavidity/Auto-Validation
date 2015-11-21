@@ -1,7 +1,7 @@
 # -*- coding: utf-8 *-*
 import googlemaps
 import json
-from datetime import datetime,date,time
+import datetime
 from decodeMapPolyline import *
 import xlrd
 from colored import bg,fg,attr
@@ -48,8 +48,9 @@ class Step(object):
 
 class RouteInfo(object):
     '''This is the class for saving route information'''
-    def __init__(self, route_info_dict):
+    def __init__(self, route_info_dict, mode):
         self.route_info_dict = route_info_dict
+        self.query_mode = mode
         self.overview_polyline = None
         self.distance = None
         self.duration = None
@@ -97,9 +98,9 @@ class MapInfo(object):
         self.origin = origin
         self.destin = destin
         self.gmaps = googlemaps.Client(key, queries_per_second=10)
-        d = date(2015,12,15)
-        t = time(12,30)
-        self.time = datetime.combine(d,t)
+        d = datetime.date(2015,12,15)
+        t = datetime.time(12,30)
+        self.time = datetime.datetime.combine(d,t)
         self.transit_routes = []
         self.driving_routes = []
         self.walking_routes = []
@@ -142,7 +143,7 @@ class MapInfo(object):
             print ("%s%s[API]%s" % (fg(15), bg(1), attr(0))), "Get transit data failed"
             print "ID:", self.ID
         for route_dict in query_result:
-            route = RouteInfo(route_dict)
+            route = RouteInfo(route_dict, "transit")
             self.transit_routes.append(route)
         return self.transit_routes
 
@@ -152,7 +153,7 @@ class MapInfo(object):
             print ("%s%s[API]%s" % (fg(15), bg(1), attr(0))), "Get driving data failed"
             print "ID:", self.ID
         for route_dict in query_result:
-            route = RouteInfo(route_dict)
+            route = RouteInfo(route_dict, "driving")
             self.driving_routes.append(route)
         return self.driving_routes
 
@@ -162,7 +163,7 @@ class MapInfo(object):
             print ("%s%s[API]%s" % (fg(15), bg(1), attr(0))), "Get walking data failed"
             print "ID:", self.ID
         for route_dict in query_result:
-            route = RouteInfo(route_dict)
+            route = RouteInfo(route_dict, "walking")
             self.walking_routes.append(route)
         return self.walking_routes
 
@@ -201,7 +202,7 @@ def main():
     model = MapInfo(nodeID, origin, destin)
     routes = model.get_walking_mode_route()
     maps = pygmaps.maps(0,0,4)
-    '''
+    
     for route in routes:
         print route.start_location
         print route.end_location
@@ -229,7 +230,7 @@ def main():
             print "    ",step.distance
             print "    ",step.polyline
             print "    ",step.travel_mode
-        '''
+        
     routes = model.get_transit_mode_route()
     for route in routes:
         print route.start_location
@@ -238,7 +239,7 @@ def main():
         print route.distance
         print route.overview_polyline
         print len(route.overview_polyline)
-        '''
+        
         for step in route.steps:
             print "    ",step.start_location
             print "    ",step.end_location
@@ -251,8 +252,7 @@ def main():
             print "    ",step.arrival_stop
             print "    ",step.short_name 
         maps.addpath(route.overview_polyline,"#00FF00")
-    '''
-        break
+    
     #maps.draw('./mymap.html')
 
 

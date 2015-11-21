@@ -1,10 +1,14 @@
 # -*- coding: utf-8 *-*
 
-import datetime
+
 import xlrd
 from colored import bg,fg,attr
 import NSE_Analytics_for_validation.process
 import logging
+from comparison import *
+import datetime
+import os
+import json
 
 def read_file(file_name):
     try:
@@ -50,11 +54,17 @@ def main():
     # print "[QUERY] Node Date :", nodeDate
     # print 'Type of nodeDate[0]: ', type(nodeDate[0])
     numNodes = len(nodeID)
-    numNodes = 5;
+    numNodes = 60;
+    if not os.path.exists("report"):
+            os.makedirs("report")
+
+    # for calculation the accuracy
+    total = 0
+    right = 0
 
     # go through each node
     for inode in xrange(0,numNodes):
-        print "******** processing: "+str(nodeID[inode])+"********"
+        print "******** processing: "+str(inode)+" : "+str(nodeID[inode])+"********"
         # checking am trips, jump if the date is Monday
         current_date_tuple = datetime.datetime.strptime(nodeDate[inode], "%Y%m%d")
         current_date = current_date_tuple.strftime("%Y-%m-%d")
@@ -80,6 +90,19 @@ def main():
         # trips: json string/python dict including trip information, such as am_distance, am_duration, am_mode
         # home/school location
         am_track, pm_track, trips, home_loc, school_loc = ana_result
+
+        # change am_track and pm_track format
+        am_track_list = []
+        for point in am_track:
+            if math.isnan(point[0]) or math.isnan(point[1]):
+                continue
+            am_track_list.append((point[0],point[1]))
+
+        pm_track_list = []
+        for point in pm_track:
+            if math.isnan(point[0]) or math.isnan(point[1]):
+                continue
+            pm_track_list.append((point[0],point[1]))
         
         # check if there's valid value for each feature
         if home_loc==(None,None) or school_loc==(None,None):
@@ -101,6 +124,7 @@ def main():
                 logging.warning('AM duration is too short! Skip the node.')
                 continue
 
+        '''
         # print for showing the data format
         print "length of am track: ", len(am_track)
         print "am_track: ", am_track
@@ -111,7 +135,7 @@ def main():
         print "home location: ", home_loc
         print "school location: ", school_loc
         print "trip information: ", trips
-
+        '''
         
 
 
@@ -120,8 +144,29 @@ def main():
 
 
 
-        # apply the general track comparison
+        # MODE_STOP_OUT = 0;
+        # MODE_STOP_IN = 1;
+        # MODE_WALK_IN = 2;
+        # MODE_WALK_OUT = 3;
+        # MODE_TRAIN = 4;
+        # MODE_BUS = 5;
+        # MODE_CAR = 6;
 
+        # apply the general track comparison
+        total += 1
+        model = Comparison(str(nodeID[inode]), home_loc, school_loc, am_track_list, am_distance, am_duration, am_mode, current_date)
+        report = model.comparison()
+        if report != None:
+            fw = open("report/"+str(nodeID[inode])+"_"+str(current_date), "w")
+            fw.write(json.dumps(report))
+            if report["result"] == True:
+                right += 1
+
+        model.export_map()
+    
+    print total
+    print right
+    print float(right)/float(total)
 
 
 if __name__=="__main__":

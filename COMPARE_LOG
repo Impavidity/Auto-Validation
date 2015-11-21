@@ -1,0 +1,551 @@
+[FILE] Reading file now ...
+[FILE] Read file successfully
+******** processing: 0 : 509057********
+current_date:  2015-09-30
+previous_date:  2015-09-29
+DB Connected
+/usr/lib/python2.7/dist-packages/numpy/lib/nanfunctions.py:514: FutureWarning: In Numpy 1.9 the sum along empty slices will be zero.
+  FutureWarning)
+2015-11-21 22:07:22,201 NID: 509057; TIME SPAN: 10; NUM of PTS: 3410
+2015-11-21 22:07:22,201 NID: 509057; HOME: (1.3922, 103.8771)
+2015-11-21 22:07:22,201 NID: 509057; SCHOOL: (1.36, 103.8701)
+2015-11-21 22:07:22,202 NID: 509057; TRIPS: {'travel_co2': 83.317819963992747, 'am_duration': [], 'am_distance': [], 'pm_duration': [501], 'pm_distance': [4.3851484191575132], 'outdoor_time': 0.55583333333333329, 'pm_mode': [5], 'am_mode': []}
+2015-11-21 22:07:22,202 NID: 509057; POIS: {'poi_lat': [1.3589, 1.36, 1.359, 1.3922], 'poi_lon': [103.8696, 103.8701, 103.8697, 103.8771]}
+2015-11-21 22:07:22,206 AM_track is too short! Skip the node.
+******** processing: 1 : 509057********
+current_date:  2015-10-01
+previous_date:  2015-09-30
+DB Connected
+2015-11-21 22:07:27,504 NID: 509057; TIME SPAN: 4; NUM of PTS: 3591
+2015-11-21 22:07:27,505 NID: 509057; HOME: (1.3922, 103.877)
+2015-11-21 22:07:27,505 NID: 509057; SCHOOL: (1.36, 103.8701)
+2015-11-21 22:07:27,505 NID: 509057; TRIPS: {'travel_co2': 165.008260499187, 'am_duration': [670], 'am_distance': [4.6616449918813752], 'pm_duration': [538], 'pm_distance': [4.0230002975495198], 'outdoor_time': 1.1866666666666668, 'pm_mode': [5], 'am_mode': [5]}
+2015-11-21 22:07:27,505 NID: 509057; POIS: {'poi_lat': [1.3922, 1.3589, 1.36, 1.3576, 1.3587, 1.3921], 'poi_lon': [103.877, 103.8696, 103.8701, 103.8714, 103.8722, 103.877]}
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9c4f310>, 'dis': 64.04189577071251}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9c4f350>, 'dis': 139.25978064329985}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e910d350>, 'dis': 331.0164364637993}]
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9a77c10>, 'dis': 712.5344113063237}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9a77c50>, 'dis': 128.16648442484475}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9a77f10>, 'dis': 154.220107428604}]
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e91ba0d0>, 'dis': 60.07058663687796}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e91ba110>, 'dis': 685.9658366945469}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e91ba290>, 'dis': 54.82612310445927}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e90ffdd0>, 'dis': 95.20813715637141}]
+transit
+******** processing: 2 : 509059********
+current_date:  2015-09-30
+previous_date:  2015-09-29
+DB Connected
+2015-11-21 22:07:29,200 NID: 509059; TIME SPAN: 3; NUM of PTS: 212
+2015-11-21 22:07:29,200 NID: 509059; HOME: (1.3576, 103.8712)
+2015-11-21 22:07:29,201 NID: 509059; SCHOOL: (None, None)
+2015-11-21 22:07:29,201 NID: 509059; TRIPS: {'travel_co2': 0, 'am_duration': [], 'am_distance': [], 'pm_duration': [], 'pm_distance': [], 'outdoor_time': 0, 'pm_mode': [], 'am_mode': []}
+2015-11-21 22:07:29,201 NID: 509059; POIS: {'poi_lat': [1.3576], 'poi_lon': [103.8712]}
+2015-11-21 22:07:29,205 No valid home/sch location! Skip the node.
+******** processing: 3 : 509059********
+current_date:  2015-10-01
+previous_date:  2015-09-30
+DB Connected
+2015-11-21 22:07:32,367 NID: 509059; TIME SPAN: 14; NUM of PTS: 2014
+2015-11-21 22:07:32,367 NID: 509059; HOME: (1.3576, 103.8712)
+2015-11-21 22:07:32,367 NID: 509059; SCHOOL: (1.3598, 103.8701)
+2015-11-21 22:07:32,367 NID: 509059; TRIPS: {'travel_co2': 0, 'am_duration': [], 'am_distance': [], 'pm_duration': [], 'pm_distance': [], 'outdoor_time': 1.398611111111111, 'pm_mode': [], 'am_mode': []}
+2015-11-21 22:07:32,367 NID: 509059; POIS: {'poi_lat': [1.3576, 1.3589, 1.3598, 1.3576], 'poi_lon': [103.8712, 103.8696, 103.8701, 103.8709]}
+2015-11-21 22:07:32,372 AM_track is too short! Skip the node.
+******** processing: 4 : 512116********
+2015-11-21 22:07:32,373 Analysis day is a Monday! Skip the node.
+******** processing: 5 : 512117********
+current_date:  2015-09-30
+previous_date:  2015-09-29
+DB Connected
+2015-11-21 22:07:40,405 NID: 512117; TIME SPAN: 2; NUM of PTS: 4850
+2015-11-21 22:07:40,405 NID: 512117; HOME: (1.3592, 103.9347)
+2015-11-21 22:07:40,406 NID: 512117; SCHOOL: (1.3586, 103.9496)
+2015-11-21 22:07:40,406 NID: 512117; TRIPS: {'travel_co2': 1e-05, 'am_duration': [209], 'am_distance': [1.169658691483497], 'pm_duration': [310], 'pm_distance': [1.3088879907596531], 'outdoor_time': 0.15888888888888889, 'pm_mode': [3], 'am_mode': [3]}
+2015-11-21 22:07:40,406 NID: 512117; POIS: {'poi_lat': [1.36, 1.3574, 1.3586, 1.3585, 1.3592], 'poi_lon': [103.9346, 103.95, 103.9496, 103.9352, 103.9347]}
+2015-11-21 22:07:40,411 AM duration is too short! Skip the node.
+******** processing: 6 : 512118********
+current_date:  2015-09-30
+previous_date:  2015-09-29
+DB Connected
+2015-11-21 22:07:44,053 NID: 512118; TIME SPAN: 10; NUM of PTS: 1210
+2015-11-21 22:07:44,053 NID: 512118; HOME: (1.3746, 103.8772)
+2015-11-21 22:07:44,053 NID: 512118; SCHOOL: (1.3564, 103.8902)
+2015-11-21 22:07:44,053 NID: 512118; TRIPS: {'travel_co2': 146.23342828262275, 'am_duration': [864], 'am_distance': [3.3862291690420414], 'pm_duration': [1439], 'pm_distance': [4.3102670563591552], 'outdoor_time': 1.2397222222222222, 'pm_mode': [5], 'am_mode': [5]}
+2015-11-21 22:07:44,054 NID: 512118; POIS: {'poi_lat': [1.3746, 1.3564, 1.3746], 'poi_lon': [103.8772, 103.8902, 103.8772]}
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e90c4990>, 'dis': 308.7431047099559}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e90c49d0>, 'dis': 385.1329913687051}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e90c4c90>, 'dis': 239.56729969215615}]
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e91ba2d0>, 'dis': 147.13130187846434}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e91ba310>, 'dis': 737.8068122476425}]
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9b3b110>, 'dis': 390.7697854340836}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9b3b150>, 'dis': 444.90921992637914}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9b3b250>, 'dis': 42.67779380442186}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9b3b350>, 'dis': 734.1807125706498}]
+transit
+******** processing: 7 : 512118********
+current_date:  2015-10-01
+previous_date:  2015-09-30
+DB Connected
+2015-11-21 22:07:47,718 NID: 512118; TIME SPAN: 22; NUM of PTS: 1224
+2015-11-21 22:07:47,718 NID: 512118; HOME: (1.3746, 103.8772)
+2015-11-21 22:07:47,718 NID: 512118; SCHOOL: (1.3564, 103.8901)
+2015-11-21 22:07:47,718 NID: 512118; TRIPS: {'travel_co2': 98.929307639694457, 'am_duration': [743, 130], 'am_distance': [2.9727003674660075, 0.16554062076633078], 'pm_duration': [828, 550], 'pm_distance': [0.6430522247765281, 2.2341052977810691], 'outdoor_time': 1.3500000000000001, 'pm_mode': [3, 5], 'am_mode': [5, 3]}
+2015-11-21 22:07:47,718 NID: 512118; POIS: {'poi_lat': [1.3746, 1.3564, 1.3562, 1.3746], 'poi_lon': [103.8772, 103.8901, 103.8909, 103.8772]}
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e91badd0>, 'dis': 322.2968826806355}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e91baf90>, 'dis': 360.0773000138652}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e91ba490>, 'dis': 224.78475431879266}]
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9b3b350>, 'dis': 126.34799773555184}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9b3b490>, 'dis': 758.4450513689073}]
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9a91790>, 'dis': 366.0773457361864}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9a917d0>, 'dis': 431.39376293682915}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9a918d0>, 'dis': 46.580162415124335}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9a919d0>, 'dis': 755.0245249456303}]
+transit
+******** processing: 8 : 512119********
+2015-11-21 22:07:48,053 Analysis day is a Monday! Skip the node.
+******** processing: 9 : 512119********
+current_date:  2015-09-30
+previous_date:  2015-09-29
+DB Connected
+2015-11-21 22:07:50,918 NID: 512119; TIME SPAN: 12; NUM of PTS: 1545
+2015-11-21 22:07:50,919 NID: 512119; HOME: (1.3742, 103.9604)
+2015-11-21 22:07:50,919 NID: 512119; SCHOOL: (1.3574, 103.95)
+2015-11-21 22:07:50,919 NID: 512119; TRIPS: {'travel_co2': 77.763229128259226, 'am_duration': [367], 'am_distance': [2.8030355916562248], 'pm_duration': [1158, 329], 'pm_distance': [0.1433421139623825, 1.2897659414100502], 'outdoor_time': 0.3502777777777778, 'pm_mode': [3, 5], 'am_mode': [5]}
+2015-11-21 22:07:50,919 NID: 512119; POIS: {'poi_lat': [1.3742, 1.3587, 1.3574, 1.3587, 1.3581, 1.3742], 'poi_lon': [103.9604, 103.9488, 103.95, 103.9488, 103.9503, 103.9604]}
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e91ba150>, 'dis': 923.5073692566945}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e91bab50>, 'dis': 954.1061696206606}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9bdadd0>, 'dis': 954.1061696206606}]
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9c80ad0>, 'dis': 954.1061696206606}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9c80910>, 'dis': 93.62886388976887}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e910d210>, 'dis': 36.21109820541108}]
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9a94b50>, 'dis': 954.1061696206606}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9a94b90>, 'dis': 926.1056394309134}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9a94c90>, 'dis': 926.1056394309134}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9a94dd0>, 'dis': 837.3912875231562}]
+driving
+******** processing: 10 : 512123********
+current_date:  2015-09-30
+previous_date:  2015-09-29
+DB Connected
+2015-11-21 22:07:53,999 NID: 512123; TIME SPAN: 15; NUM of PTS: 1101
+2015-11-21 22:07:54,000 NID: 512123; HOME: (1.328, 103.8599)
+2015-11-21 22:07:54,000 NID: 512123; SCHOOL: (1.3565, 103.8914)
+2015-11-21 22:07:54,000 NID: 512123; TRIPS: {'travel_co2': 113.1633864531228, 'am_duration': [], 'am_distance': [], 'pm_duration': [302, 1189, 749], 'pm_distance': [2.2974227836317263, 0.10491688542427247, 3.6585449244273684], 'outdoor_time': 0.33250000000000002, 'pm_mode': [5, 3, 5], 'am_mode': []}
+2015-11-21 22:07:54,000 NID: 512123; POIS: {'poi_lat': [1.328, 1.3492, 1.3607, 1.3565, 1.3373, 1.3281], 'poi_lon': [103.8599, 103.8727, 103.8858, 103.8914, 103.8961, 103.8599]}
+2015-11-21 22:07:54,005 AM distance is too short! Skip the node.
+******** processing: 11 : 512123********
+current_date:  2015-10-01
+previous_date:  2015-09-30
+DB Connected
+2015-11-21 22:07:56,883 NID: 512123; TIME SPAN: 16; NUM of PTS: 999
+2015-11-21 22:07:56,883 NID: 512123; HOME: (1.3281, 103.8599)
+2015-11-21 22:07:56,883 NID: 512123; SCHOOL: (1.3564, 103.8913)
+2015-11-21 22:07:56,883 NID: 512123; TRIPS: {'travel_co2': 193.57590620351627, 'am_duration': [15369, 670], 'am_distance': [1.3309107792174646, 4.2495820311222232], 'pm_duration': [1035], 'pm_distance': [5.9386235585365279], 'outdoor_time': 0.70944444444444443, 'pm_mode': [5], 'am_mode': [3, 5]}
+2015-11-21 22:07:56,884 NID: 512123; POIS: {'poi_lat': [1.3224, 1.3347, 1.3437, 1.3564, 1.3281], 'poi_lon': [103.8529, 103.8625, 103.8623, 103.8913, 103.8599]}
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9bdab10>, 'dis': 357.5730286167314}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e91ba4d0>, 'dis': 311.62180259152035}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9bda410>, 'dis': 1070.9659408541108}]
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e910d450>, 'dis': 598.551739780212}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e910d3d0>, 'dis': 120.81746032102095}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e910d690>, 'dis': 1132.9871980509306}]
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9129c10>, 'dis': 1246.02394611132}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9129c50>, 'dis': 158.5772853670718}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9129dd0>, 'dis': 1249.7389368224515}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9129f50>, 'dis': 1249.7389368224515}]
+driving
+******** processing: 12 : 512124********
+2015-11-21 22:07:57,589 Analysis day is a Monday! Skip the node.
+******** processing: 13 : 512124********
+current_date:  2015-09-30
+previous_date:  2015-09-29
+DB Connected
+2015-11-21 22:08:00,533 NID: 512124; TIME SPAN: 16; NUM of PTS: 1305
+2015-11-21 22:08:00,534 NID: 512124; HOME: (1.3598, 103.8842)
+2015-11-21 22:08:00,534 NID: 512124; SCHOOL: (1.3563, 103.891)
+2015-11-21 22:08:00,534 NID: 512124; TRIPS: {'travel_co2': 0, 'am_duration': [], 'am_distance': [], 'pm_duration': [], 'pm_distance': [], 'outdoor_time': 0.44305555555555554, 'pm_mode': [], 'am_mode': []}
+2015-11-21 22:08:00,534 NID: 512124; POIS: {'poi_lat': [1.3596, 1.3563, 1.3598], 'poi_lon': [103.8847, 103.891, 103.8842]}
+2015-11-21 22:08:00,538 AM_track is too short! Skip the node.
+******** processing: 14 : 512124********
+current_date:  2015-10-01
+previous_date:  2015-09-30
+DB Connected
+2015-11-21 22:08:03,666 NID: 512124; TIME SPAN: 16; NUM of PTS: 1421
+2015-11-21 22:08:03,667 NID: 512124; HOME: (1.3598, 103.8842)
+2015-11-21 22:08:03,667 NID: 512124; SCHOOL: (1.3563, 103.891)
+2015-11-21 22:08:03,667 NID: 512124; TRIPS: {'travel_co2': 0, 'am_duration': [], 'am_distance': [], 'pm_duration': [], 'pm_distance': [], 'outdoor_time': 3.5, 'pm_mode': [], 'am_mode': []}
+2015-11-21 22:08:03,667 NID: 512124; POIS: {'poi_lat': [1.3598, 1.3602, 1.3563, 1.3598], 'poi_lon': [103.8842, 103.8851, 103.891, 103.8843]}
+2015-11-21 22:08:03,671 AM_track is too short! Skip the node.
+******** processing: 15 : 513425********
+2015-11-21 22:08:03,672 Analysis day is a Monday! Skip the node.
+******** processing: 16 : 513425********
+current_date:  2015-09-30
+previous_date:  2015-09-29
+DB Connected
+2015-11-21 22:08:07,069 NID: 513425; TIME SPAN: 17; NUM of PTS: 1128
+2015-11-21 22:08:07,070 NID: 513425; HOME: (1.3708, 103.8989)
+2015-11-21 22:08:07,070 NID: 513425; SCHOOL: (1.3564, 103.8911)
+2015-11-21 22:08:07,071 NID: 513425; TRIPS: {'travel_co2': 67.542792771903891, 'am_duration': [420, 527], 'am_distance': [1.3399701160408248, 0.945291607602561], 'pm_duration': [224, 768], 'pm_distance': [0.38440333522603337, 2.2149137140593802], 'outdoor_time': 0.6958333333333333, 'pm_mode': [3, 5], 'am_mode': [5, 3]}
+2015-11-21 22:08:07,071 NID: 513425; POIS: {'poi_lat': [1.3708, 1.3564, 1.3708], 'poi_lon': [103.8989, 103.8911, 103.8989]}
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9b3b9d0>, 'dis': 423.9723457969994}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9b3b3d0>, 'dis': 551.4481193190672}]
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9b3ba50>, 'dis': 95.9669587219501}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9b3bc10>, 'dis': 180.12113023816246}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9a94e90>, 'dis': 285.0421586366182}]
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9bcad90>, 'dis': 197.4853443784776}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9bcad50>, 'dis': 93.31993960908171}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9bcae90>, 'dis': 560.5393650219672}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9bcaf10>, 'dis': 278.9115182996435}]
+transit
+******** processing: 17 : 513425********
+current_date:  2015-10-01
+previous_date:  2015-09-30
+DB Connected
+2015-11-21 22:08:10,985 NID: 513425; TIME SPAN: 22; NUM of PTS: 1327
+2015-11-21 22:08:10,985 NID: 513425; HOME: (1.3708, 103.8989)
+2015-11-21 22:08:10,985 NID: 513425; SCHOOL: (1.3563, 103.8911)
+2015-11-21 22:08:10,986 NID: 513425; TRIPS: {'travel_co2': 55.803390081191054, 'am_duration': [458, 514], 'am_distance': [1.8074790675543355, 0.9567146275783233], 'pm_duration': [511, 288], 'pm_distance': [0.6723893910362242, 1.1295414630346672], 'outdoor_time': 0.51027777777777783, 'pm_mode': [3, 5], 'am_mode': [5, 3]}
+2015-11-21 22:08:10,986 NID: 513425; POIS: {'poi_lat': [1.3708, 1.3563, 1.3708], 'poi_lon': [103.8989, 103.8911, 103.8989]}
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9a94710>, 'dis': 435.0129067698632}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9a946d0>, 'dis': 547.8196051195036}]
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9b3bf10>, 'dis': 101.51437958606176}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9b3bf50>, 'dis': 186.72301445904574}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9b3bcd0>, 'dis': 273.94104333023967}]
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e90fff50>, 'dis': 193.49871729231162}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e90ffb90>, 'dis': 96.27400873204603}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9c80d50>, 'dis': 557.6378944515334}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9c80a90>, 'dis': 263.0596336281154}]
+transit
+******** processing: 18 : 513427********
+current_date:  2015-09-30
+previous_date:  2015-09-29
+DB Connected
+2015-11-21 22:08:13,932 NID: 513427; TIME SPAN: 16; NUM of PTS: 1069
+2015-11-21 22:08:13,932 NID: 513427; HOME: (1.3799, 103.8798)
+2015-11-21 22:08:13,932 NID: 513427; SCHOOL: (1.3565, 103.8914)
+2015-11-21 22:08:13,933 NID: 513427; TRIPS: {'travel_co2': 1e-05, 'am_duration': [], 'am_distance': [], 'pm_duration': [3659], 'pm_distance': [0.3585806693326648], 'outdoor_time': 0.018333333333333333, 'pm_mode': [3], 'am_mode': []}
+2015-11-21 22:08:13,933 NID: 513427; POIS: {'poi_lat': [1.3803, 1.3791, 1.3663, 1.3565, 1.3803, 1.3799], 'poi_lon': [103.8795, 103.8797, 103.8904, 103.8914, 103.8875, 103.8798]}
+2015-11-21 22:08:13,938 AM distance is too short! Skip the node.
+******** processing: 19 : 513432********
+current_date:  2015-09-30
+previous_date:  2015-09-29
+DB Connected
+2015-11-21 22:08:17,221 NID: 513432; TIME SPAN: 16; NUM of PTS: 1715
+2015-11-21 22:08:17,222 NID: 513432; HOME: (1.3225, 103.8609)
+2015-11-21 22:08:17,222 NID: 513432; SCHOOL: (1.3565, 103.8914)
+2015-11-21 22:08:17,222 NID: 513432; TRIPS: {'travel_co2': 1e-05, 'am_duration': [656], 'am_distance': [5.5623307391698802], 'pm_duration': [8155], 'pm_distance': [4.0], 'outdoor_time': 0.23999999999999999, 'pm_mode': [3], 'am_mode': [3]}
+2015-11-21 22:08:17,222 NID: 513432; POIS: {'poi_lat': [1.3225, 1.3565, 1.3564, 1.359, 1.3224], 'poi_lon': [103.8609, 103.8914, 103.8902, 103.887, 103.8609]}
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9a94a10>, 'dis': 306.0532733649372}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9a94590>, 'dis': 114.48767559742275}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9bcad90>, 'dis': 790.0665704074443}]
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e90ffc50>, 'dis': 38.967187664379615}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e90fffd0>, 'dis': 796.3158000333158}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9b3b310>, 'dis': 589.68586189844}]
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9a72e90>, 'dis': 47.59968875592772}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9a72ed0>, 'dis': 805.779677466752}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9a72fd0>, 'dis': 302.44275184629566}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9c4a150>, 'dis': 864.7600212605572}]
+driving
+******** processing: 20 : 513435********
+2015-11-21 22:08:17,584 Analysis day is a Monday! Skip the node.
+******** processing: 21 : 513435********
+current_date:  2015-09-30
+previous_date:  2015-09-29
+DB Connected
+2015-11-21 22:08:19,563 NID: 513435; TIME SPAN: 15; NUM of PTS: 717
+2015-11-21 22:08:19,564 NID: 513435; HOME: (1.3794, 103.9371)
+2015-11-21 22:08:19,564 NID: 513435; SCHOOL: (1.3563, 103.8904)
+2015-11-21 22:08:19,564 NID: 513435; TRIPS: {'travel_co2': 196.38224336144083, 'am_duration': [10966, 592], 'am_distance': [2.7670605587334816, 4.0367116060663184], 'pm_duration': [724], 'pm_distance': [6.2991959392726731], 'outdoor_time': 0.4752777777777778, 'pm_mode': [5], 'am_mode': [3, 5]}
+2015-11-21 22:08:19,564 NID: 513435; POIS: {'poi_lat': [1.3794, 1.3723, 1.3563, 1.3794], 'poi_lon': [103.9371, 103.9086, 103.8904, 103.9371]}
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9b3b7d0>, 'dis': 207.5904568823455}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9b3ba50>, 'dis': 1020.3874374708004}]
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e90cad10>, 'dis': 69.73180700467883}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9c80dd0>, 'dis': 438.66203766241483}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e90cadd0>, 'dis': 1023.2102472937602}]
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9bca690>, 'dis': 88.33957893014}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9bca510>, 'dis': 175.55727696985517}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9bca050>, 'dis': 299.48953927880905}]
+driving
+******** processing: 22 : 513435********
+current_date:  2015-10-01
+previous_date:  2015-09-30
+DB Connected
+2015-11-21 22:08:24,181 NID: 513435; TIME SPAN: 16; NUM of PTS: 1359
+2015-11-21 22:08:24,181 NID: 513435; HOME: (1.3794, 103.9371)
+2015-11-21 22:08:24,181 NID: 513435; SCHOOL: (1.3563, 103.8909)
+2015-11-21 22:08:24,182 NID: 513435; TRIPS: {'travel_co2': 45.728304021427363, 'am_duration': [1313, 143], 'am_distance': [0.57451203311467292, 0.57383543559179306], 'pm_duration': [420, 381], 'pm_distance': [1.8329174076412262, 5.2282501071600791], 'outdoor_time': 0.27500000000000002, 'pm_mode': [5, 3], 'am_mode': [3, 5]}
+2015-11-21 22:08:24,182 NID: 513435; POIS: {'poi_lat': [1.3794, 1.3781, 1.3574, 1.3563, 1.379, 1.3795], 'poi_lon': [103.9371, 103.9337, 103.8917, 103.8909, 103.9354, 103.9371]}
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9c80b90>, 'dis': 157.24849751417452}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9c80f10>, 'dis': 675.2018067934924}]
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9b3b6d0>, 'dis': 48.633477692324774}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e90ffbd0>, 'dis': 547.3816975217907}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e90cacd0>, 'dis': 675.9786529622594}]
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9c4a6d0>, 'dis': 70.21926439236654}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9c4a710>, 'dis': 135.91147780438413}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e910d690>, 'dis': 92.71239706024073}]
+driving
+******** processing: 23 : 513437********
+2015-11-21 22:08:25,138 Analysis day is a Monday! Skip the node.
+******** processing: 24 : 513471********
+2015-11-21 22:08:25,138 Analysis day is a Monday! Skip the node.
+******** processing: 25 : 513471********
+current_date:  2015-09-30
+previous_date:  2015-09-29
+DB Connected
+2015-11-21 22:08:28,319 NID: 513471; TIME SPAN: 7; NUM of PTS: 1479
+2015-11-21 22:08:28,320 NID: 513471; HOME: (1.339, 103.857)
+2015-11-21 22:08:28,320 NID: 513471; SCHOOL: (1.3563, 103.8909)
+2015-11-21 22:08:28,320 NID: 513471; TRIPS: {'travel_co2': 122.91858904799219, 'am_duration': [2760, 289, 609, 578], 'am_distance': [0.76115958132604122, 1.9256807807612883, 0.12156039523493975, 2.0465649065613278], 'pm_duration': [12292, 550], 'pm_distance': [0.82649479426673156, 2.4971537362559197], 'outdoor_time': 0.69388888888888889, 'pm_mode': [3, 5], 'am_mode': [3, 5, 3, 5]}
+2015-11-21 22:08:28,321 NID: 513471; POIS: {'poi_lat': [1.339, 1.3412, 1.3436, 1.3563, 1.3512, 1.3507, 1.339], 'poi_lon': [103.857, 103.8569, 103.8621, 103.8909, 103.8801, 103.8487, 103.8568]}
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e90ca450>, 'dis': 32.24525495278125}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e90cafd0>, 'dis': 624.4025145181469}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e90ca550>, 'dis': 54.81060492921699}]
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e910d9d0>, 'dis': 624.455523000812}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e910dbd0>, 'dis': 1226.4336485984645}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e910d350>, 'dis': 180.3056273541489}]
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9b4b690>, 'dis': 81.91030128177096}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9b4b6d0>, 'dis': 162.88191848599027}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9b4b810>, 'dis': 1280.080871266564}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9b4b910>, 'dis': 310.7943570902899}]
+walking
+******** processing: 26 : 513471********
+current_date:  2015-10-01
+previous_date:  2015-09-30
+DB Connected
+2015-11-21 22:08:33,027 NID: 513471; TIME SPAN: 16; NUM of PTS: 1189
+2015-11-21 22:08:33,027 NID: 513471; HOME: (1.3389, 103.8569)
+2015-11-21 22:08:33,027 NID: 513471; SCHOOL: (1.3564, 103.8909)
+2015-11-21 22:08:33,028 NID: 513471; TRIPS: {'travel_co2': 163.31167891190938, 'am_duration': [1065], 'am_distance': [5.7162453473472015], 'pm_duration': [804, 1249], 'pm_distance': [2.6480602538996423, 2.879106174332239], 'outdoor_time': 0.995, 'pm_mode': [3, 5], 'am_mode': [5]}
+2015-11-21 22:08:33,028 NID: 513471; POIS: {'poi_lat': [1.3389, 1.3564, 1.339], 'poi_lon': [103.8569, 103.8909, 103.8568]}
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9a9a210>, 'dis': 361.9401466656852}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc801d51090>, 'dis': 814.5729605865905}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e90cacd0>, 'dis': 403.5136970857777}]
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9b3ba10>, 'dis': 815.0160210131568}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9b3b990>, 'dis': 1335.6901599374885}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9b3bfd0>, 'dis': 550.4105879173873}]
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9c80b50>, 'dis': 38.4229912653472}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9c80a90>, 'dis': 485.04679450780867}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9c80050>, 'dis': 1317.3005714621293}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9c80850>, 'dis': 530.3696981740032}]
+transit
+******** processing: 27 : 513472********
+current_date:  2015-09-30
+previous_date:  2015-09-29
+DB Connected
+2015-11-21 22:08:38,900 NID: 513472; TIME SPAN: 1; NUM of PTS: 3089
+2015-11-21 22:08:38,900 NID: 513472; HOME: (1.3555, 103.9572)
+2015-11-21 22:08:38,900 NID: 513472; SCHOOL: (1.3586, 103.9495)
+2015-11-21 22:08:38,900 NID: 513472; TRIPS: {'travel_co2': 0, 'am_duration': [], 'am_distance': [], 'pm_duration': [], 'pm_distance': [], 'outdoor_time': 0.24666666666666667, 'pm_mode': [], 'am_mode': []}
+2015-11-21 22:08:38,901 NID: 513472; POIS: {'poi_lat': [1.3555, 1.3574, 1.3586, 1.3561, 1.3555], 'poi_lon': [103.9572, 103.9501, 103.9495, 103.9542, 103.9572]}
+2015-11-21 22:08:38,904 AM_track is too short! Skip the node.
+******** processing: 28 : 513473********
+2015-11-21 22:08:38,905 Analysis day is a Monday! Skip the node.
+******** processing: 29 : 513473********
+current_date:  2015-09-30
+previous_date:  2015-09-29
+DB Connected
+2015-11-21 22:08:42,264 NID: 513473; TIME SPAN: 23; NUM of PTS: 1911
+2015-11-21 22:08:42,265 NID: 513473; HOME: (1.3666, 103.8917)
+2015-11-21 22:08:42,265 NID: 513473; SCHOOL: (1.3564, 103.8902)
+2015-11-21 22:08:42,265 NID: 513473; TRIPS: {'travel_co2': 1e-05, 'am_duration': [], 'am_distance': [], 'pm_duration': [501], 'pm_distance': [0.8757738926907322], 'outdoor_time': 0.47805555555555557, 'pm_mode': [3], 'am_mode': []}
+2015-11-21 22:08:42,265 NID: 513473; POIS: {'poi_lat': [1.3666, 1.3564, 1.3574, 1.3648, 1.3666], 'poi_lon': [103.8917, 103.8902, 103.8912, 103.8901, 103.8917]}
+2015-11-21 22:08:42,271 AM_track is too short! Skip the node.
+******** processing: 30 : 513475********
+2015-11-21 22:08:42,271 Analysis day is a Monday! Skip the node.
+******** processing: 31 : 513475********
+current_date:  2015-09-30
+previous_date:  2015-09-29
+DB Connected
+2015-11-21 22:08:46,146 NID: 513475; TIME SPAN: 17; NUM of PTS: 2142
+2015-11-21 22:08:46,147 NID: 513475; HOME: (1.3585, 103.8889)
+2015-11-21 22:08:46,147 NID: 513475; SCHOOL: (1.3565, 103.8914)
+2015-11-21 22:08:46,147 NID: 513475; TRIPS: {'travel_co2': 0, 'am_duration': [], 'am_distance': [], 'pm_duration': [], 'pm_distance': [], 'outdoor_time': 0.51083333333333336, 'pm_mode': [], 'am_mode': []}
+2015-11-21 22:08:46,148 NID: 513475; POIS: {'poi_lat': [1.3585, 1.3565, 1.3701, 1.3587, 1.3568, 1.3585], 'poi_lon': [103.8889, 103.8914, 103.8889, 103.8921, 103.8922, 103.8889]}
+2015-11-21 22:08:46,152 AM_track is too short! Skip the node.
+******** processing: 32 : 513475********
+current_date:  2015-10-01
+previous_date:  2015-09-30
+DB Connected
+2015-11-21 22:08:49,136 NID: 513475; TIME SPAN: 7; NUM of PTS: 1078
+2015-11-21 22:08:49,136 NID: 513475; HOME: (1.3585, 103.8889)
+2015-11-21 22:08:49,137 NID: 513475; SCHOOL: (1.3564, 103.8913)
+2015-11-21 22:08:49,137 NID: 513475; TRIPS: {'travel_co2': 0, 'am_duration': [], 'am_distance': [], 'pm_duration': [], 'pm_distance': [], 'outdoor_time': 1.385, 'pm_mode': [], 'am_mode': []}
+2015-11-21 22:08:49,137 NID: 513475; POIS: {'poi_lat': [1.3585, 1.3564, 1.3585], 'poi_lon': [103.8889, 103.8913, 103.8889]}
+2015-11-21 22:08:49,144 AM_track is too short! Skip the node.
+******** processing: 33 : 513476********
+2015-11-21 22:08:49,145 Analysis day is a Monday! Skip the node.
+******** processing: 34 : 513476********
+current_date:  2015-09-30
+previous_date:  2015-09-29
+DB Connected
+2015-11-21 22:08:55,283 NID: 513476; TIME SPAN: 6; NUM of PTS: 2948
+2015-11-21 22:08:55,284 NID: 513476; HOME: (1.3521, 103.9591)
+2015-11-21 22:08:55,284 NID: 513476; SCHOOL: (1.3587, 103.9495)
+2015-11-21 22:08:55,284 NID: 513476; TRIPS: {'travel_co2': 0, 'am_duration': [], 'am_distance': [], 'pm_duration': [], 'pm_distance': [], 'outdoor_time': 1.2952777777777778, 'pm_mode': [], 'am_mode': []}
+2015-11-21 22:08:55,285 NID: 513476; POIS: {'poi_lat': [1.3581, 1.3587, 1.3574, 1.3518, 1.3521], 'poi_lon': [103.9499, 103.9495, 103.95, 103.9576, 103.9591]}
+2015-11-21 22:08:55,295 AM_track is too short! Skip the node.
+******** processing: 35 : 513478********
+2015-11-21 22:08:55,296 Analysis day is a Monday! Skip the node.
+******** processing: 36 : 514500********
+2015-11-21 22:08:55,296 Analysis day is a Monday! Skip the node.
+******** processing: 37 : 514500********
+current_date:  2015-09-30
+previous_date:  2015-09-29
+DB Connected
+2015-11-21 22:08:59,421 NID: 514500; TIME SPAN: 10; NUM of PTS: 1826
+2015-11-21 22:08:59,422 NID: 514500; HOME: (1.281, 103.8287)
+2015-11-21 22:08:59,422 NID: 514500; SCHOOL: (1.2868, 103.8379)
+2015-11-21 22:08:59,422 NID: 514500; TRIPS: {'travel_co2': 46.824313394747101, 'am_duration': [434, 460], 'am_distance': [3.6018702611343922, 2.617009786020295], 'pm_duration': [18796], 'pm_distance': [0.90148629133003821], 'outdoor_time': 0.87027777777777782, 'pm_mode': [3], 'am_mode': [4, 3]}
+2015-11-21 22:08:59,423 NID: 514500; POIS: {'poi_lat': [1.281, 1.2868, 1.2809], 'poi_lon': [103.8287, 103.8379, 103.8288]}
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9c4a090>, 'dis': 292.3053090800935}]
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9c80050>, 'dis': 289.5897658989014}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9c80cd0>, 'dis': 294.45866056438985}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9b4b390>, 'dis': 65.45660789504147}]
+[FILE] Reading json data from file now ...
+[FILE] Reading json data from file finished
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9b3b4d0>, 'dis': 292.3053090800935}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9b3b410>, 'dis': 295.15250671115194}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9b3b450>, 'dis': 285.0488286054053}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e910d750>, 'dis': 63.557913011563635}]
+transit
+******** processing: 38 : 514501********
+2015-11-21 22:08:59,885 Analysis day is a Monday! Skip the node.
+******** processing: 39 : 514503********
+2015-11-21 22:08:59,885 Analysis day is a Monday! Skip the node.
+******** processing: 40 : 514503********
+current_date:  2015-09-30
+previous_date:  2015-09-29
+DB Connected
+2015-11-21 22:09:04,219 NID: 514503; TIME SPAN: 16; NUM of PTS: 1726
+2015-11-21 22:09:04,219 NID: 514503; HOME: (1.2987, 103.7974)
+2015-11-21 22:09:04,220 NID: 514503; SCHOOL: (1.2872, 103.838)
+2015-11-21 22:09:04,220 NID: 514503; TRIPS: {'travel_co2': 148.73834266968657, 'am_duration': [642, 4776], 'am_distance': [5.5476371375657871, 0.040586072761207265], 'pm_duration': [514, 1932], 'pm_distance': [1.0199171253893875, 5.8937738370254866], 'outdoor_time': 1.0186111111111111, 'pm_mode': [3, 4], 'am_mode': [4, 3]}
+2015-11-21 22:09:04,221 NID: 514503; POIS: {'poi_lat': [1.2987, 1.3021, 1.28, 1.2872, 1.2956, 1.2987], 'poi_lon': [103.7974, 103.7983, 103.8389, 103.838, 103.808, 103.7974]}
+/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:79: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+  InsecurePlatformWarning
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e91e7750>, 'dis': 438.33494515315186}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc801d2dad0>, 'dis': 515.5114773250433}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9c4a210>, 'dis': 506.9520588908713}]
+/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:79: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+  InsecurePlatformWarning
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9b4b450>, 'dis': 446.5144834923354}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9b4b690>, 'dis': 565.1601559312566}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9b3b210>, 'dis': 599.3817757505499}]
+/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:79: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+  InsecurePlatformWarning
+[{'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7ea1dac10>, 'dis': 130.16404284624517}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7ea1da310>, 'dis': 536.943791048197}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e9b3b2d0>, 'dis': 603.8299415089053}, {'route': <GetDataFromGoogleAPI.RouteInfo object at 0x7fc7e910dc90>, 'dis': 625.8097560333163}]
+transit
+******** processing: 41 : 514505********
+2015-11-21 22:09:05,412 Analysis day is a Monday! Skip the node.
+******** processing: 42 : 514505********
+current_date:  2015-09-30
+previous_date:  2015-09-29
+DB Connected
+2015-11-21 22:09:09,459 NID: 514505; TIME SPAN: 9; NUM of PTS: 2522
+2015-11-21 22:09:09,459 NID: 514505; HOME: (1.3493, 103.7448)
+2015-11-21 22:09:09,459 NID: 514505; SCHOOL: (1.3461, 103.7523)
+2015-11-21 22:09:09,460 NID: 514505; TRIPS: {'travel_co2': 0, 'am_duration': [], 'am_distance': [], 'pm_duration': [], 'pm_distance': [], 'outdoor_time': 3.3088888888888888, 'pm_mode': [], 'am_mode': []}
+2015-11-21 22:09:09,460 NID: 514505; POIS: {'poi_lat': [1.3493, 1.3461, 1.3492], 'poi_lon': [103.7448, 103.7523, 103.7448]}
+2015-11-21 22:09:09,465 AM_track is too short! Skip the node.
+******** processing: 43 : 514511********
+current_date:  2015-10-01
+previous_date:  2015-09-30
+DB Connected
+2015-11-21 22:09:14,485 NID: 514511; TIME SPAN: 4; NUM of PTS: 3061
+2015-11-21 22:09:14,486 NID: 514511; HOME: (1.345, 103.7481)
+2015-11-21 22:09:14,486 NID: 514511; SCHOOL: (1.3456, 103.7509)
+2015-11-21 22:09:14,487 NID: 514511; TRIPS: {'travel_co2': 0, 'am_duration': [], 'am_distance': [], 'pm_duration': [], 'pm_distance': [], 'outdoor_time': 0.27972222222222221, 'pm_mode': [], 'am_mode': []}
+2015-11-21 22:09:14,487 NID: 514511; POIS: {'poi_lat': [1.346, 1.3456, 1.345], 'poi_lon': [103.7526, 103.7509, 103.7481]}
+2015-11-21 22:09:14,494 AM_track is too short! Skip the node.
+******** processing: 44 : 514511********
+current_date:  2015-10-02
+previous_date:  2015-10-01
+DB Connected
+2015-11-21 22:09:17,441 NID: 514511; TIME SPAN: 5; NUM of PTS: 934
+2015-11-21 22:09:17,442 NID: 514511; HOME: (1.345, 103.7481)
+2015-11-21 22:09:17,442 NID: 514511; SCHOOL: (1.3456, 103.7509)
+2015-11-21 22:09:17,442 NID: 514511; TRIPS: {'travel_co2': 0, 'am_duration': [], 'am_distance': [], 'pm_duration': [], 'pm_distance': [], 'outdoor_time': 0.09194444444444444, 'pm_mode': [], 'am_mode': []}
+2015-11-21 22:09:17,442 NID: 514511; POIS: {'poi_lat': [1.3452, 1.3456, 1.3459, 1.345], 'poi_lon': [103.7481, 103.7509, 103.7482, 103.7481]}
+2015-11-21 22:09:17,447 AM_track is too short! Skip the node.
+******** processing: 45 : 514594********
+2015-11-21 22:09:17,448 Analysis day is a Monday! Skip the node.
+******** processing: 46 : 514594********
+current_date:  2015-09-30
+previous_date:  2015-09-29
+DB Connected
+2015-11-21 22:09:22,824 NID: 514594; TIME SPAN: 11; NUM of PTS: 3082
+2015-11-21 22:09:22,825 NID: 514594; HOME: (1.341, 103.8494)
+2015-11-21 22:09:22,825 NID: 514594; SCHOOL: (1.3369, 103.8479)
+2015-11-21 22:09:22,825 NID: 514594; TRIPS: {'travel_co2': 0, 'am_duration': [], 'am_distance': [], 'pm_duration': [], 'pm_distance': [], 'outdoor_time': 1.7347222222222223, 'pm_mode': [], 'am_mode': []}
+2015-11-21 22:09:22,825 NID: 514594; POIS: {'poi_lat': [1.341, 1.3368, 1.3369, 1.341], 'poi_lon': [103.8494, 103.847, 103.8479, 103.8494]}
+2015-11-21 22:09:22,830 AM_track is too short! Skip the node.
+******** processing: 47 : 514594********
+current_date:  2015-10-01
+previous_date:  2015-09-30
+DB Connected
+2015-11-21 22:09:29,177 NID: 514594; TIME SPAN: 21; NUM of PTS: 4246
+2015-11-21 22:09:29,178 NID: 514594; HOME: (1.3411, 103.8495)
+2015-11-21 22:09:29,178 NID: 514594; SCHOOL: (1.3369, 103.8479)
+2015-11-21 22:09:29,179 NID: 514594; TRIPS: {'travel_co2': 0, 'am_duration': [], 'am_distance': [], 'pm_duration': [], 'pm_distance': [], 'outdoor_time': 0.72944444444444445, 'pm_mode': [], 'am_mode': []}
+2015-11-21 22:09:29,180 NID: 514594; POIS: {'poi_lat': [1.341, 1.3369, 1.3411], 'poi_lon': [103.8494, 103.8479, 103.8495]}
+2015-11-21 22:09:29,189 AM_track is too short! Skip the node.
+******** processing: 48 : 514594********
+current_date:  2015-10-02
+previous_date:  2015-10-01
+DB Connected
+2015-11-21 22:09:36,261 NID: 514594; TIME SPAN: 21; NUM of PTS: 3830
+2015-11-21 22:09:36,262 NID: 514594; HOME: (1.3411, 103.8495)
+2015-11-21 22:09:36,262 NID: 514594; SCHOOL: (1.3369, 103.8479)
+2015-11-21 22:09:36,262 NID: 514594; TRIPS: {'travel_co2': 0, 'am_duration': [], 'am_distance': [], 'pm_duration': [], 'pm_distance': [], 'outdoor_time': 0.37055555555555558, 'pm_mode': [], 'am_mode': []}
+2015-11-21 22:09:36,262 NID: 514594; POIS: {'poi_lat': [1.3411, 1.3404, 1.3388, 1.3373, 1.3368, 1.3369, 1.3409], 'poi_lon': [103.8495, 103.8487, 103.8477, 103.8479, 103.847, 103.8479, 103.8495]}
+2015-11-21 22:09:36,267 AM_track is too short! Skip the node.
+******** processing: 49 : 514595********
+2015-11-21 22:09:36,268 Analysis day is a Monday! Skip the node.
+******** processing: 50 : 514595********
+current_date:  2015-10-02
+previous_date:  2015-10-01
+DB Connected
+2015-11-21 22:09:39,027 NID: 514595; TIME SPAN: 10; NUM of PTS: 1132
+2015-11-21 22:09:39,028 NID: 514595; HOME: (1.2871, 103.8337)
+2015-11-21 22:09:39,028 NID: 514595; SCHOOL: (1.287, 103.838)
+2015-11-21 22:09:39,028 NID: 514595; TRIPS: {'travel_co2': 0, 'am_duration': [], 'am_distance': [], 'pm_duration': [], 'pm_distance': [], 'outdoor_time': 0.32861111111111113, 'pm_mode': [], 'am_mode': []}
+2015-11-21 22:09:39,028 NID: 514595; POIS: {'poi_lat': [1.2871, 1.2894, 1.2867, 1.287, 1.2831, 1.2871], 'poi_lon': [103.8337, 103.8325, 103.8381, 103.838, 103.8383, 103.8337]}
+2015-11-21 22:09:39,033 AM_track is too short! Skip the node.
+******** processing: 51 : 514596********
+2015-11-21 22:09:39,033 Analysis day is a Monday! Skip the node.
+******** processing: 52 : 514598********
+current_date:  2015-09-30
+previous_date:  2015-09-29
+DB Connected
+2015-11-21 22:09:41,205 No data!
+2015-11-21 22:09:41,206 No analytic results gotten!
+2015-11-21 22:09:41,209 No analytic results gotten! Skip the node.
+******** processing: 53 : 517606********
+2015-11-21 22:09:41,210 Analysis day is a Monday! Skip the node.
+******** processing: 54 : 517610********
+2015-11-21 22:09:41,210 Analysis day is a Monday! Skip the node.
+******** processing: 55 : 517612********
+2015-11-21 22:09:41,210 Analysis day is a Monday! Skip the node.
+******** processing: 56 : 517612********
+current_date:  2015-10-02
+previous_date:  2015-10-01
+DB Connected
+2015-11-21 22:09:41,932 No data!
+2015-11-21 22:09:41,932 No analytic results gotten!
+2015-11-21 22:09:41,936 No analytic results gotten! Skip the node.
+******** processing: 57 : 517617********
+2015-11-21 22:09:41,936 Analysis day is a Monday! Skip the node.
+******** processing: 58 : 517617********
+current_date:  2015-09-30
+previous_date:  2015-09-29
+DB Connected
+2015-11-21 22:09:43,904 NID: 517617; TIME SPAN: 16; NUM of PTS: 778
+2015-11-21 22:09:43,904 NID: 517617; HOME: (1.3155, 103.7683)
+2015-11-21 22:09:43,904 NID: 517617; SCHOOL: (1.3153, 103.7617)
+2015-11-21 22:09:43,904 NID: 517617; TRIPS: {'travel_co2': 0, 'am_duration': [], 'am_distance': [], 'pm_duration': [], 'pm_distance': [], 'outdoor_time': 0.29944444444444446, 'pm_mode': [], 'am_mode': []}
+2015-11-21 22:09:43,905 NID: 517617; POIS: {'poi_lat': [1.3155, 1.3153, 1.3153, 1.3155], 'poi_lon': [103.7683, 103.7652, 103.7617, 103.7683]}
+2015-11-21 22:09:43,910 AM_track is too short! Skip the node.
+******** processing: 59 : 517620********
+current_date:  2015-09-30
+previous_date:  2015-09-29
+DB Connected
+2015-11-21 22:09:47,801 NID: 517620; TIME SPAN: 16; NUM of PTS: 2329
+2015-11-21 22:09:47,801 NID: 517620; HOME: (1.3051, 103.7616)
+2015-11-21 22:09:47,802 NID: 517620; SCHOOL: (1.3153, 103.7617)
+2015-11-21 22:09:47,802 NID: 517620; TRIPS: {'travel_co2': 0, 'am_duration': [], 'am_distance': [], 'pm_duration': [], 'pm_distance': [], 'outdoor_time': 0.41999999999999998, 'pm_mode': [], 'am_mode': []}
+2015-11-21 22:09:47,802 NID: 517620; POIS: {'poi_lat': [1.3049, 1.3153, 1.3146, 1.3051], 'poi_lon': [103.7643, 103.7617, 103.7644, 103.7616]}
+2015-11-21 22:09:47,805 AM_track is too short! Skip the node.
+14
+7
+0.5
