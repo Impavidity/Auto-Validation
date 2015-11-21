@@ -25,6 +25,15 @@ def read_file(file_name):
 
 
 def main():
+    # parameters
+    too_short_track = 10 # number of track coordinate pairs
+    too_short_dist = 1 # km
+    too_short_dura = 5*60 # seconds
+    MODE_WALK = 3
+    MODE_TRAIN = 4
+    MODE_BUS = 5
+    MODE_CAR = 6
+
     # initialization
     # create one dict for nodes that are skipped with the skipping reasons
 
@@ -71,7 +80,28 @@ def main():
         # trips: json string/python dict including trip information, such as am_distance, am_duration, am_mode
         # home/school location
         am_track, pm_track, trips, home_loc, school_loc = ana_result
+        
+        # check if there's valid value for each feature
+        if home_loc==(None,None) or school_loc==(None,None):
+            # jump the node if no valid home/sch location
+            logging.warning('No valid home/sch location! Skip the node.')
+            continue
+        elif len(am_track)<too_short_track:
+            # jump the node if the am_track is too short
+            logging.warning('AM_track is too short! Skip the node.')
+            continue
+        else:
+            am_distance = trips['am_distance']
+            am_duration = trips['am_duration']
+            am_mode = trips['am_mode']
+            if sum(am_distance)<too_short_dist:
+                logging.warning('AM distance is too short! Skip the node.')
+                continue
+            if sum(am_duration)<too_short_dura:
+                logging.warning('AM duration is too short! Skip the node.')
+                continue
 
+        # print for showing the data format
         print "length of am track: ", len(am_track)
         print "am_track: ", am_track
         if len(am_track)>0:
@@ -82,7 +112,7 @@ def main():
         print "school location: ", school_loc
         print "trip information: ", trips
 
-        # check the length of am track, total am distance and am duration, jump if too small
+        
 
 
 
